@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import axios from "axios";
+import Footer from "./components/Footer";
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -74,8 +75,9 @@ function App() {
             {isCelsio ? "temp to °F" : "temp to °C"}{" "}
           </button>
         </div>
-
       </div>
+
+      <Footer/>
     </div>
   );
 }
