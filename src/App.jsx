@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import axios from "axios";
-import Footer from "./components/Footer";
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -22,9 +21,8 @@ function App() {
           setWeather(res.data);
           const temp = {
             celsiu: `${Math.round(res.data.main.temp - 273.15)}°C`,
-            farenheit: `${
-              (Math.round(res.data.main.temp - 273.15) * 9) / 5 + 32
-            }°F`,
+            farenheit: `${(Math.round(res.data.main.temp - 273.15) * 9) / 5 + 32
+              }°F`,
           };
           setTemperature(temp);
         });
@@ -35,49 +33,91 @@ function App() {
   console.log(weather);
   return (
     <div className="App">
-      <div className="container">
+
+      <div className="time">
+   
+        
+     
+
+
+        <input type="text" placeholder="Buscar ciudad" />
         <h1 className="title--weather">weather app</h1>
-        <p>
-          {weather.name} &nbsp; <span>{weather.sys?.country}</span>
-        </p>
-        <div className="allTime">
-          <div className="cloud">
-            <img
-              className="img--clouds"
-              src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
-              alt=""
-            />
-          </div>
-
-          <div className="time">
-            <p>"scattereb clouds"</p>
-            <p>
-              speed: <span> {` ${weather.wind?.speed} m/s`}</span>
-            </p>
-            <p>
-              clouds: <span>{` ${weather.clouds?.all} %`}</span>
-            </p>
-            <p>
-              pressure: <span>{` ${weather.main?.pressure} mb`}</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="temp--container">
-          <p className="temp">
-            temp:{" "}
-            <span>
-              {isCelsio ? temperature?.celsiu : temperature?.farenheit}
-            </span>
-          </p>
-          <button onClick={isclick} className="btn">
-            {" "}
-            {isCelsio ? "temp to °F" : "temp to °C"}{" "}
-          </button>
-        </div>
+        
+        <button onClick={isclick} className="btn">
+          {" "}
+          {isCelsio ? " °F" : " °C"}{" "}
+        </button>
       </div>
 
-      <Footer/>
+
+      {/* nubes */}
+      <div className="cloud">
+
+        <div className="nubes">
+          <p>
+            {weather.name} &nbsp; <span>{weather.sys?.country}</span>
+          </p>
+          <img
+            className="img--clouds"
+            src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
+            alt=""
+          />
+          <p>{weather.weather?.[0].description}</p>
+        </div>
+
+
+        <h1 className="temp">
+          {" "}
+          <span style={{ color: "white" }}>
+            {isCelsio ? temperature?.celsiu : temperature?.farenheit}
+          </span>
+        </h1>
+
+      </div>
+      {/*  */}
+
+      <div className="time">
+
+
+        <p className="estados-clima">
+          <span className="name">Temp_min:</span> <span>{` ${weather.main?.temp_main} `}</span>
+        </p>
+        <p className="estados-clima">
+          <span className="name">Temp_max:</span> <span>{` ${weather.main?.temp_max} `}</span>
+        </p>
+        <p className="estados-clima">
+          <span className="name">Feels_like:</span> <span>{` ${weather.main?.feels_like} mb`}</span>
+        </p>
+        <p className="estados-clima">
+          <span className="name">Pressure:</span> <span>{` ${weather.main?.pressure} hpa`}</span>
+        </p>
+        <p className="estados-clima">
+          <span className="name">Humidity: </span> <span>{` ${weather.main?.humidity} %`}</span>
+        </p>
+        <p className="estados-clima">
+          <span className="name">Wind speed: </span>  <span> {` ${weather.wind?.speed} m/s`}</span>
+        </p>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+      
+
+
+
+
+
+
+
+
     </div>
   );
 }
