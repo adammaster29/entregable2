@@ -65,7 +65,7 @@ function App() {
           <p>{weather.weather?.[0].description}</p>
         </div>
 
-
+        <i style={{color:"white"}} className='bx bx-cloud-lightning bx-fade-down bx-lg' ></i>
         <h1 className="temp">
           {" "}
           <span style={{ color: "white" }}>
