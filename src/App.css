@@ -30,6 +30,7 @@ body {
 
 .title--weather {
   color: var(--green);
+  font-size:30px;
 }
 
 
@@ -37,7 +38,7 @@ body {
 .cloud {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 90%;
   height: 150px;
   background: rgba(42, 86, 128, 0.562);
@@ -62,6 +63,8 @@ height: 150px;
   margin-left: auto;
   margin-right: auto;
   height: 100px;
+  text-align: center;
+  padding: 5px;
 }
 
 .img--clouds {
@@ -83,13 +86,25 @@ width: auto;
 height: 70px;
 border-radius: 5px;
 }
-
+.input-contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lupa{
+  font-size: 30px;
+  position: absolute;
+  z-index: 2;
+  margin-left:220px ;
+  margin-top: 8px;
+}
 input{
   width: 250px;
   height: 35px;
   border: #658e96;
   background-clip: border-box;
   border-radius: 5px;
+  text-align: center;
 
 }
 .btn {
@@ -115,6 +130,62 @@ span {
 }
 
 /*mediaquery*/
+
+@media screen and (max-width: 480px) {
+  .time {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    width: 80%;
+  padding: 1rem;
+  border-radius: 8px;
+}
+  .title--weather {
+    font-size: 18px;
+    text-align: center;
+
+}
+.lupa{
+  margin-left:170px ;
+  margin-top: 8px;
+}
+input {
+  width: 200px;
+  height: 35px;
+ margin-left: auto;
+ margin-right: auto;
+
+}
+.btn {
+  width: 100px;
+  height: 25px;
+}
+
+.cloud {
+  flex-direction: column;
+  height: auto;
+  width: 80%;
+border-radius: 8px;
+}
+.nubes {
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+.estados-clima {
+  display: flex;
+  flex-direction: column;
+  background: #2a405a6e;
+  width: 100%;
+  box-shadow: 2px 2px 2px gray;
+  height: 60px;
+  border-radius: 5px;
+  gap: 5px;
+}
+}
+
 
 @media screen and (min-width: 480px) {
   .container {
