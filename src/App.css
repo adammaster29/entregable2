@@ -14,6 +14,7 @@ body,html {
   height: 100%;
 }
 
+
 :root {
   --green: rgb(255, 255, 255);
   --red: red;
@@ -127,6 +128,13 @@ span {
 /*mediaquery*/
 
 @media screen and (max-width: 480px) {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://media.ambito.com/p/73442197f27e8a1ac8be63d0e5b1dd92/adjuntos/239/imagenes/040/324/0040324719/1200x675/smart/oceano-pacificojpg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
   .time {
     display: flex;
     flex-direction: column-reverse;
