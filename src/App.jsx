@@ -58,6 +58,12 @@ function App() {
     setSearchQuery(e.target.value);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="App">
       <div className="time">
@@ -67,6 +73,7 @@ function App() {
             placeholder="Buscar ciudad"
             value={searchQuery}
             onChange={handleChange}
+            onKeyDown={handleKeyDown}
           />
           <i onClick={handleSearch} className="bx bx-search lupa"></i>
         </div>
