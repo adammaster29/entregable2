@@ -1,18 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,200&family=Roboto:ital,wght@1,100&display=swap");
-* {
+ html,body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 .App {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(https://media.ambito.com/p/73442197f27e8a1ac8be63d0e5b1dd92/adjuntos/239/imagenes/040/324/0040324719/1200x675/smart/oceano-pacificojpg.jpg);
+  background-image: url(/img/rio.gif);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh; /* Establece la altura del contenedor al 100% de la ventana */
+  height: 100vh; 
+display: flex;
+flex-direction: column;
+justify-content: space-around;
 }
+
 
 
 
@@ -39,17 +45,22 @@
   align-items: center;
   justify-content: space-around;
   width: 90%;
-  height: 150px;
-  background: rgba(42, 86, 128, 0.562);
+  height: 170px;
+  background: rgba(6, 38, 67, 0.671);
   margin: 120px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 12px;
 
 }
 
 /*nubes*/
 .nubes{
 height: 150px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 
@@ -57,18 +68,19 @@ height: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: rgba(42, 86, 128, 0.562);
+  background: rgba(6, 38, 67, 0.671);
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   height: 100px;
   text-align: center;
   padding: 5px;
+  border-radius: 12px;
 }
 
 .img--clouds {
   width: 150px;
-  height: 100px;
+  height: 80px;
 }
 
 .temp{
@@ -132,6 +144,9 @@ span {
 
 @media screen and (max-width: 480px) {
 
+.App{
+  height: 100%;
+}
   .time {
     display: flex;
     flex-direction: column-reverse;
@@ -163,16 +178,17 @@ input {
 
 .cloud {
   flex-direction: column;
-  height: auto;
+  min-height: 300px;
   width: 80%;
-border-radius: 8px;
+  
 }
 .nubes {
   display: flex;
   flex-direction:column ;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 150px;
+  margin-top: 1rem;
 }
 .estados-clima {
   display: flex;
