@@ -105,7 +105,7 @@ function App() {
         </div>
       )}
 
-      <div className="time">
+      {/* <div className="time">
         <p className="estados-clima">
           <span className="name">Temp_min:</span> <span>{` ${weather.main?.temp_min} `}</span>
         </p>
@@ -124,7 +124,16 @@ function App() {
         <p className="estados-clima">
           <span className="name">Wind speed:</span> <span>{` ${weather.wind?.speed} m/s`}</span>
         </p>
-      </div>
+      </div> */}
+      <div className="weather-details">
+  <div className="detail-card">Temp min: <span>{weather.main?.temp_min}°</span></div>
+  <div className="detail-card">Temp max: <span>{weather.main?.temp_max}°</span></div>
+  <div className="detail-card">Feels like: <span>{weather.main?.feels_like}°</span></div>
+  <div className="detail-card">Pressure: <span>{weather.main?.pressure} hPa</span></div>
+  <div className="detail-card">Humidity: <span>{weather.main?.humidity}%</span></div>
+  <div className="detail-card">Wind speed: <span>{weather.wind?.speed} m/s</span></div>
+</div>
+
     </div>
   );
 }
